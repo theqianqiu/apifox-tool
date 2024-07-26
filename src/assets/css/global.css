@@ -1,0 +1,148 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@tailwind screens;
+
+/* 全局变量配置 */
+:root {
+    /* 字体，字号配置 */
+    --text-xxs: 12px;
+    --text-xs: 13px;
+    --text-base: 14px;
+    --text-title: 16px;
+    --text-18: 18px;
+    --text-20: 20px;
+    --text-24: 24px;
+    --text-36: 36px;
+    --text-48: 48px;
+    --text-56: 56px;
+
+    /* 圆角 */
+    --round-none: 0;
+    --round-base: 4px;
+    --round-md: 6px;
+    --round-lg: 8px;
+    --rounded: 50%;
+
+    /* 投影 按投影面积从小到大 */
+    --shadow-1-center: '0 0 5px rgba(0, 0, 0, 0.1)';
+    --shadow-1-top: '0 -2px 5px rgba(0, 0, 0, 0.1)';
+    --shadow-1-bottom: '0 2px 5px rgba(0, 0, 0, 0.1)';
+    --shadow-1-left: '-2px 0 5px rgba(0, 0, 0, 0.1)';
+    --shadow-1-right: '2px 0 5px rgba(0, 0, 0, 0.1)';
+    --shadow-1-top-left: '-2px -2px 5px rgba(0, 0, 0, 0.1)';
+    --shadow-1-bottom-left: '-2px 2px 5px rgba(0, 0, 0, 0.1)';
+    --shadow-1-top-right: '2px -2px 5px rgba(0, 0, 0, 0.1)';
+    --shadow-1-bottom-right: '2px 2px 5px rgba(0, 0, 0, 0.1)';
+
+    --shadow-2-center: '0 0 10px rgba(0, 0, 0, 0.1)';
+    --shadow-2-top: '0 -4px 10px rgba(0, 0, 0, 0.1)';
+    --shadow-2-bottom: '0 4px 10px rgba(0, 0, 0, 0.1)';
+    --shadow-2-left: '-4px 0 10px rgba(0, 0, 0, 0.1)';
+    --shadow-2-right: '4px 0 10px rgba(0, 0, 0, 0.1)';
+    --shadow-2-top-left: '-4px -4px 10px rgba(0, 0, 0, 0.1)';
+    --shadow-2-bottom-left: '-4px 4px 10px rgba(0, 0, 0, 0.1)';
+    --shadow-2-top-right: '4px -4px 10px rgba(0, 0, 0, 0.1)';
+    --shadow-2-bottom-right: '4px 4px 10px rgba(0, 0, 0, 0.1)';
+
+    --shadow-3-center: '0 0 20px rgba(0, 0, 0, 0.1)';
+    --shadow-3-top: '0 -8px 20px rgba(0, 0, 0, 0.1)';
+    --shadow-3-bottom: '0 8px 20px rgba(0, 0, 0, 0.1)';
+    --shadow-3-left: '-8px 0 20px rgba(0, 0, 0, 0.1)';
+    --shadow-3-right: '8px 0 20px rgba(0, 0, 0, 0.1)';
+    --shadow-3-top-left: '-8px -8px 20px rgba(0, 0, 0, 0.1)';
+    --shadow-3-bottom-left: '-8px 8px 20px rgba(0, 0, 0, 0.1)';
+    --shadow-3-top-right: '8px -8px 20px rgba(0, 0, 0, 0.1)';
+    --shadow-3-bottom-right: '8px 8px 20px rgba(0, 0, 0, 0.1)';
+}
+
+* {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, Tahoma, 'PingFang SC', Roboto, Microsoft Yahei,
+        'Microsoft Jhenghei', Arial, 'Hiragino Sans GB', 'sans-serif', 'Apple Color Emoji', 'Segoe UI Emoji',
+        'Segoe UI Symbol', 'Noto Color Emoji';
+}
+
+*:not(input):not(textarea) {
+    user-select: none;
+}
+
+html {
+    margin-top: 0 !important;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    -webkit-text-size-adjust: none !important;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+}
+
+article,
+aside,
+footer,
+header,
+nav,
+section {
+    display: block;
+}
+
+button {
+    border: none;
+    outline: none;
+    background: none;
+    cursor: pointer;
+}
+
+input {
+    outline: none;
+}
+
+/* 设置滚动条的样式 */
+::-webkit-scrollbar {
+    width: 3px;
+    height: 3px;
+    display: none;
+}
+
+/* 滚动槽 */
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset006pxrgba(0, 0, 0, 0.3);
+    box-shadow: inset006pxrgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+}
+
+/* 滚动条滑块 */
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: inset006pxrgba(0, 0, 0, 0.5);
+    box-shadow: inset006pxrgba(0, 0, 0, 0.5);
+}
+
+::-webkit-scrollbar-thumb:window-inactive {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+/** 单行文本加省略号  **/
+.text-ellipsis {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+/** 2行文本加省略号  **/
+.text-ellipsis-multiple {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+}

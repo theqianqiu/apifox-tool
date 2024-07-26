@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "lib": ["es2022", "DOM"],
+    "jsx": "react-jsx",
+    "target": "es6",
+    "module": "esnext",
+    "allowJs": true,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "removeComments": true,
+    "outDir": "./"
+  },
+  "exclude": ["node_modules", "dist"],
+  "include": ["src"]
+}
